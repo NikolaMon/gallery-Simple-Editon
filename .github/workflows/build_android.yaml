@@ -27,19 +27,19 @@ jobs:
           java-version: '21'
 
       - name: Install Android SDK Platform 37
-        run: echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-33"
+        run: yes | sdkmanager "platforms;android-37"
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
         working-directory: ./Android
 
-      - name: Build Release APK
-        run: ./gradlew assembleRelease --no-daemon
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon
         working-directory: ./Android
 
-      - name: Upload Release APK
+      - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: gallery-simple-edition-release-apk
-          path: ./Android/app/build/outputs/apk/release/app-release.apk
+          name: gallery-simple-edition-debug-apk
+          path: ./Android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
