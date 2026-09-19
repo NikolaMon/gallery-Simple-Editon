@@ -374,7 +374,7 @@ fun createAICoreConfigs(
     NumberSliderConfig(
       key = ConfigKeys.MAX_OUTPUT_TOKENS,
       sliderMin = 100f,
-      sliderMax = 4096f,
+      sliderMax = 16384f,
       defaultValue = defaultMaxOutputTokens.toFloat(),
       valueType = ValueType.INT,
     ),
