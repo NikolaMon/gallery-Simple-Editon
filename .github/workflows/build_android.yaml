@@ -42,4 +42,4 @@ jobs:
         with:
           name: gallery-simple-edition-release-apk
           path: ./Android/app/build/outputs/apk/release/app-release.apk
-          retention-days: 365
+          retention-days: 30
